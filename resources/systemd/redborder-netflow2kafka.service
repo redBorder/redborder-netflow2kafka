@@ -1,11 +1,11 @@
 [Unit]
-Description=netflow2kafka netflow/IPFIX collector daemon (x2kafka)
+Description=redborder-netflow2kafka netflow/IPFIX collector daemon (x2kafka)
 After=network.target kafka.service
 
 [Service]
 User=root
-RuntimeDirectory=netflow2kafka
-ExecStart=/usr/bin/x2kafka /etc/netflow2kafka/config.json
+RuntimeDirectory=redborder-netflow2kafka
+ExecStart=/usr/bin/x2kafka /etc/redborder-netflow2kafka/config.json
 ExecReload=/bin/kill -HUP $MAINPID
 Restart=always
 RestartSec=5s
